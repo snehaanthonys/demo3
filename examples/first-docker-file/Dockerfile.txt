@@ -1,0 +1,11 @@
+FROM amazonlinux:2023
+
+WORKDIR /app
+
+COPY . /app
+
+RUN dnf update -y && dnf install -y python3 pip
+
+ENV NAME world
+
+CMD ["python3", "app.py"]
